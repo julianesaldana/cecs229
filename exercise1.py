@@ -6,7 +6,7 @@ B = A % birthMonth
 primeNumbers = []
 extraCreditPrimeNumbers = []
 
-#odd
+#odd results
 if A % 2 != 0:
     print("A is odd\n")
     print("Cos of", A, "is", math.cos(A))
@@ -21,7 +21,7 @@ if A % 2 != 0:
     print("Smallest amount between A, B, and birthmonth is", min(A, B, birthMonth))
     print("4th root of A is", A**(1 / 4))
 
-#even
+#even results
 else:
     print("A is even\n")
     print("Sin of", A, "is", math.sin(A))
