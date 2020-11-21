@@ -4,7 +4,7 @@
 #Code:
 import math
 
-A = 18462169
+A = 18462169    #actual ID number is 018462169 but cannot keep the 0
 birthMonth = 7
 B = A % birthMonth
 primeNumbers = []
