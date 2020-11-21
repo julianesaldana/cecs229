@@ -1,3 +1,7 @@
+#Julian Saldana 018462169
+
+
+#Code:
 import math
 
 A = 18462169
@@ -6,7 +10,8 @@ B = A % birthMonth
 primeNumbers = []
 extraCreditPrimeNumbers = []
 
-#odd results
+
+#odd only
 if A % 2 != 0:
     print("A is odd\n")
     print("Cos of", A, "is", math.cos(A))
@@ -21,7 +26,8 @@ if A % 2 != 0:
     print("Smallest amount between A, B, and birthmonth is", min(A, B, birthMonth))
     print("4th root of A is", A**(1 / 4))
 
-#even results
+
+#even only
 else:
     print("A is even\n")
     print("Sin of", A, "is", math.sin(A))
@@ -36,12 +42,18 @@ else:
     print("Smallest amount between A, B, and birthmonth is", min(A, B, birthMonth))
     print("5th root of A is", A ** (1 / 5))
 
+
 #applies to both
 print("The quotient of A/B is", A/B)
 
-for x in range(5 * B):
-    if x % 2 != 0:
-        primeNumbers.append(x)
+for num in range(0, 5 * B):
+    if num > 1:
+        # check for factors
+        for i in range(2,num):
+            if (num % i) == 0:
+                break
+        else:
+            primeNumbers.append(num)  
 print("Finding prime numbers from 0 to 5*B:", primeNumbers)
 
 if -1**B == -1:
@@ -55,7 +67,38 @@ print(name, A)
 
 #extra credit
 print("\nExtra credit")
-for x in range(B, 5*B):
-    if x % 2 != 0:
-        extraCreditPrimeNumbers.append(x)
+for num in range(B, 5 * B):
+    if num > 1:
+        # check for factors
+        for i in range(2,num):
+            if (num % i) == 0:
+                break
+        else:
+            extraCreditPrimeNumbers.append(num) 
 print("Prime numbers from B to 5*B:", extraCreditPrimeNumbers)
+
+
+'''Results:
+A is odd
+
+Cos of 18462169 is -0.9629617136610379
+Tan of 18462169 is -0.28000922307003295
+Log base 10 of 18462169 is 7.266282722117588
+Log base 8 of 18462169 is 8.04602290666568
+5 to the power of 8 is 390625
+Absolute value of (-1)^ 5 * 5 is -5
+18462169 / 7 rounded up is 2637453
+18462169 / 7 rounded down is 2637452
+largest amount between A, B, and birthmonth is 18462169
+Smallest amount between A, B, and birthmonth is 5
+4th root of A is 65.54969579281337
+The quotient of A/B is 3692433.8
+Finding prime numbers from 0 to 5*B: [2, 3, 5, 7, 11, 13, 17, 19, 23]
+Finding if (-1)^B == -1: True
+
+Enter your name: Julian
+Julian 18462169
+
+Extra credit
+Prime numbers from B to 5*B: [5, 7, 11, 13, 17, 19, 23]
+'''
