@@ -24,51 +24,50 @@ avg = totalSum / userInput
 print("Sum from 1 to %d is %d and average is %.2f\n" % (userInput, totalSum, avg))
 
 # question 3
+print("3)")
 birthMonth = 7
 for i in range(12):
     if i > 8:
-        print("%d) Birth month + 6 : %s" % ((i + 1), (str(birthMonth + 6) * (i + 1))))
+        print("Birth month + 6 : %s" % ((str(birthMonth + 6) * (i + 1))))
     else:
-        print("%d) %s" % ((i + 1), (str(i + 1) * (i + 1))))
+        print("%s" % ((str(i + 1) * (i + 1))))
 print()
 
 # question 4
+print("4)")
 f = open("excel file.csv", "r")
-info = f.readlines()    # gathering all numbers from excel sheet, every index is a row
+info = f.readlines()  # gathering all numbers from excel sheet, every index is a row
 f.close()
 print(info)
 
 f = open("excel file.csv", "r")
 row = f.readline().rstrip("\n").split(",")  # creating list of numbers to reverse
 for i in range(len(row)):
-    row[i] = int(row[i])    # turned string into int
+    row[i] = int(row[i])  # turned string into int
 f.close()
 row.sort()
-row.reverse()     # sorted from big to smallest
+row.reverse()  # sorted from big to smallest
 
-
-f = open("storing.csv", "w")
-for i in range(len(row)):   # storing in columns if numbers were in a row
+f = open("columns.csv", "w")
+for i in range(len(row)):  # storing in columns if numbers were in a row
     f.write(str(row[i]))
     f.write("," * 50)
     f.write("\n")
 
 f.close()
 
-
-f = open("storing.csv", "r")
-print(f.readlines())        # reading out file, printing result
+f = open("columns.csv", "r")
+print(f.readlines())  # reading out file, printing result
 f.close()
 
-
-f = open("storing.csv", "w")
-for i in range(len(row)):   # storing in a row if numbers were in a column
+f = open("rows.csv", "w")
+for i in range(len(row)):  # storing in a row if numbers were in a column
     f.write(str(row[i]))
     f.write(",")
     if row[i] == row[-1]:
         f.write("\n")
 f.close()
 
-f = open("storing.csv", "r")
-print(f.readlines())        # reading out file, print result
+f = open("rows.csv", "r")
+print(f.readlines())  # reading out file, print result
 f.close()
